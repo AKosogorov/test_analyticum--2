@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+svg {
+  transition: fill .1s ease-in-out;
+}
+
+path {
+  transition: fill ;
+}
+
+circle {
+  transition: stroke .1s ease-in-out;
+}
+
+.f-sz-0 {
+  font-size: 0;
+  line-height: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.d-none {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 50px 0 83px;
+  max-width: 1615px;
+}
+
+.btn {
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  @include transitionColor;
+
+  &--transparent {
+    border: 1px solid $colorOrangeDawn;
+    padding: 11px 15px 12px;
+    text-transform: lowercase;
+    color: $colorOrangeDawn;
+
+    &:focus,
+    &:hover {
+      color: $colorWhite;
+      background-color: $colorOrangeDawn;
+    }
+
+    &:active {
+      color: $colorWhite;
+      background-color: $colorGrayBrown;
+    }
+  }
+
+  &--fill {
+    padding: 18px 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $colorWhite;
+    background: $colorPinkYellow;
+    box-shadow: 0px 2px 7px $colorCrayola;
+
+    &:focus,
+    &:hover {
+      background-color: $colorOrangeDawn;
+    }
+
+    &:active {
+      background-color: $colorGrayBrown;
+    }
+  }
+}
+
+.form {
+  &__label {
+    margin-bottom: 5px;
+    @include formLabel;
+  }
+
+  &__input {
+    border: none;
+    border-radius: 3px;
+    padding: 8px 40px 5px 15px;
+    min-height: 50px;
+    width: 100%;
+    @include smallFSz;
+
+    &.error {
+      box-shadow: 0px 0px 10px 1px $colorOrangeDawn;
+    }
+
+    &.error + .form__error{
+      display: block;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    display: none;
+    @include smallFSz;
+    color: $colorOrangeDawn;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba($color: #000000, $alpha: .7);
+  overflow-y: auto;
+}
+
+.form-modal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 7px;
+  margin: 5vh auto 0;
+  padding: 40px 60px 45px;
+  max-width: 973px;
+  background-repeat: no-repeat;
+  background-image: url('./images/form-modal__bg.webp');
+
+  &__btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 28px;
+    height: 28px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $colorPinkYellow;
+      @include transitionColor;
+    }
+
+    &::before {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+
+    &:focus::before,
+    &:focus::after,
+    &:hover::before,
+    &:hover::after {
+      background-color: $colorGrayBrown;
+    }
+
+    &:active::before,
+    &:active::after {
+      background-color: $colorOrangeDawn;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+    font-weight: 700;
+    @include mediumFSz;
+    text-align: center;
+    text-transform: uppercase;
+    color: $colorOrangeDawn;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 24px;
+    row-gap: 16px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  &__item {
+    position: relative;
+    grid-column: span 2;
+
+    &--name,
+    &--tel {
+      grid-column: span 1;
+    }
+  }
+
+  &__textarea {
+    height: 93px;
+    resize: none;
+  }
+
+  &__privacy-policy {
+    margin-bottom: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    color: $colorGrayBrown;
+  }
+
+  &__link {
+    font-weight: 700;
+    color: $colorOrangeDawn;
+    text-decoration: underline;
+    @include transitionColor;
+
+    &:focus,
+    &:hover {
+      color: $colorPinkYellow;
+    }
+
+    &:active {
+      color: $colorGrayBrown;
+    }
+  }
+}

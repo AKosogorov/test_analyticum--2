@@ -1,0 +1,29 @@
+mixin btn(text)
+  button.btn(class!=attributes.class type!=attributes.type)= text
+
+mixin label(text, forInput)
+  label.label(class!=attributes.class for=forInput)= text
+
+mixin input({ type, placeholder })
+  input.input(type=type, placeholder=placeholder)(class!=attributes.class, id!=attributes.id)
+
+mixin lorem()
+  p.lorem(class!=attributes.class) Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quia incidunt nihil, ipsum magni rem.
+
+mixin nav(btn)
+  -
+    const list = [
+      {text: 'О компании', href: '#about'},
+      {text: 'Направления', href: '#benefits'},
+      {text: 'Отзывы', href: '#'},
+      {text: 'Новости', href: '#'},
+      {text: 'Контакты', href: '#'},
+    ]
+  nav.nav
+    if btn
+      button#burger.nav__burger
+        span.nav__burger-line
+    ul.nav__list
+      each item in list
+        li.nav__item
+          a.nav__link(href= item.href)= item.text

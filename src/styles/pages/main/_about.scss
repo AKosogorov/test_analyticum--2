@@ -1,0 +1,57 @@
+.about {
+  padding: 123px 0 136px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    min-height: 625px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    flex: 1 1 44%;
+  }
+
+  &__heading {
+    margin-bottom: 78px;
+    padding-top: 7px;
+    font-weight: 800;
+    @include bigFSz;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  &__descr {
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    @include mediumFSz;
+    text-transform: lowercase;
+    color: $colorGrayBrown;
+  }
+
+  &__btn {
+    margin-top: auto;
+  }
+
+  &__images {
+    position: relative;
+    flex: 1 1 50%;
+  }
+
+  &__img {
+    position: absolute;
+
+    &--1 {
+      top: 0;
+      right: 0;
+    }
+
+    &--2 {
+      top: 180px;
+      right: 270px;
+    }
+  }
+}

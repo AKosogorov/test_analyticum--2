@@ -1,0 +1,14 @@
+@import '../../node_modules/normalize.css/normalize';
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
+@import 'global';
+@import './common/header';
+@import './common/nav';
+@import './pages/main/hero';
+@import './pages/main/benefits';
+@import './pages/main/about';
+@import './pages/main/feedback';
+@import './common/footer';
+@import './common/social';
+@import './media';

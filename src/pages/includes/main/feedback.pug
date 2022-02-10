@@ -1,0 +1,46 @@
+section.section.feedback#feedback
+  .container.feedback__container
+    h2.visually-hidden Обратная связь
+    .feedback__tabs
+      +btn('личные данные')(class="btn feedback__btn feedback__btn--personal is-active")
+      +btn('правила участия')(class="btn feedback__btn feedback__btn--rules")
+    form.form.feedback__form.form-feedback
+      h3.form__subtitle.feedback__subtitle.form-feedback__subtitle Заполните форму
+      ul.form-feedback__list
+        li.form-feedback__item.form-feedback__item--upload
+          img.form-feedback__upload-img
+          .form-feedback__upload-box
+            +input({ type: 'file' })(id='form-feedback__input--upload' class='form-feedback__upload-input')
+            span.form-feedback__upload-text Загрузите фото
+            +label('Выберете файл', 'form-feedback__input--upload')(class='form-feedback__upload-label')
+        li.form-feedback__item
+          +label('Имя', 'form-feedback__input--name')(class='form__label form-feedback__label')
+          +input({})(id='form-feedback__input--name' class='form__input form-feedback__input')
+          span.form__error
+        li.form-feedback__item
+          +label('Фамилия', 'form-feedback__input--surname')(class='form__label form-feedback__label')
+          +input({})(id='form-feedback__input--surname' class='form__input form-feedback__input')
+          span.form__error
+        li.form-feedback__item.form-feedback__item--select
+          span.form__label.form-feedback__label Пол
+          .form-feedback__select
+            .form-feedback__selected не выбран
+            ul.form-feedback__select-dropdown
+              li.form-feedback__option мужской
+              li.form-feedback__option женский
+        li.form-feedback__item
+          +label('Телефон', 'form-feedback__input--tel')(class='form__label form-feedback__label')
+          +input({ type: 'tel', placeholder: '+7 (   )    -  -  ' })(id='form-feedback__input--tel' class='form__input form-feedback__input')
+          span.form__error
+        li.form-feedback__item
+          +label('E-mail', 'form-feedback__input--email')(class='form__label form-feedback__label')
+          +input({ type: 'email' })(id='form-feedback__input--email' class='form__input form-feedback__input')
+          span.form__error
+      +btn('отправить')(class="btn btn--fill form-feedback__btn")
+    .feedback__rules.d-none
+      h3.feedback__subtitle Будь собой
+      p.feedback__text t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+      ul.feedback__list
+        each item in [1, 2, 3]
+          li.feedback__item Lorem Ipsum is simply dummy text of the printing and typesetting
+      span.feedback__good-luck Удачи в твоих начинаниях)

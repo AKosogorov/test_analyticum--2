@@ -1,0 +1,17 @@
+-
+  const list = [
+    {subtitle: 'спонтанно', src: '', modificator: '1'},
+    {subtitle: 'энергично', src: '', modificator: '2'},
+    {subtitle: 'весело', src: '', modificator: '3'},
+  ]
+
+section.section.benefits#benefits
+  .container.benefits__container
+    h2.visually-hidden Преимущества
+    ul.benefits__list
+      each item in list
+        li.benefits__item
+          .benefits__img(class="benefits__img--" + item.modificator)
+          .benefits__text-content
+            h3.benefits__subtitle= item.subtitle
+            +lorem()(class="benefits__descr")

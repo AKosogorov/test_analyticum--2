@@ -1,0 +1,31 @@
+header.header#header
+  .container.header__container
+    a.header__logo(href="#")
+      include ../../images/logo.svg
+    .header__right
+      +nav(true)
+      +btn('Обратный звонок')(class="btn btn--transparent header__btn")
+.modal.d-none
+  form.form.form-modal
+    +btn()(class="form-modal__btn-close")
+    h3.form-modal__subtitle Заполните форму
+    ul.form-modal__list
+      li.form-modal__item.form-modal__item--name
+          +label('Имя', 'form-modal__input--name')(class='form__label form-modal__label')
+          +input({})(id='form-modal__input--name' class='form__input form-modal__input')
+          span.form__error
+      li.form-modal__item.form-modal__item--tel
+          +label('Телефон', 'form-modal__input--tel')(class='form__label form-modal__label')
+          +input({ type: 'tel', placeholder: '+7 (   )    -  -  ' })(id='form-modal__input--tel' class='form__input form-modal__input')
+          span.form__error
+      li.form-modal__item
+          +label('E-mail', 'form-modal__input--email')(class='form__label form-modal__label')
+          +input({ type: 'email' })(id='form-modal__input--email' class='form__input form-modal__input')
+          span.form__error
+      li.form-modal__item
+          +label('Задать вопрос', 'form-modal__textarea')(class='form__label form-modal__label')
+          textarea#form-modal__textarea.form__input.form-modal__textarea
+    p.form-modal__privacy-policy Отправляя любые формы запросов, Вы соглашаетесь с условиями
+      a.form-modal__link(href="#")
+        |  «Положения о конфиденциальности»
+    +btn('Отправить')(class="btn btn--fill form-modal__btn" type="submit")

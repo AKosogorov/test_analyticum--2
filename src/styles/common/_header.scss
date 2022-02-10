@@ -1,0 +1,20 @@
+.header {
+  min-height: 100px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 70px 0;
+    max-width: 1920px;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  &__btn {
+    margin-left: 42px;
+  }
+}
